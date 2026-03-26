@@ -7,6 +7,18 @@
     "verification": "wow",
     "percentToQualify": "100",
     "password": "Free To Copy",
-    "records": [
+    "records": [        
+        {
+            "user": "NoyanUK",
+            "link": "d",
+            "percent": 100,
+            "hz": 360
+        },
+        {
+            "user": "brushGD",
+            "link": "U",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }

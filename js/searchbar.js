@@ -1,38 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Create search container
-    const searchContainer = document.createElement("div");
-    searchContainer.style.position = "absolute";
-    searchContainer.style.top = "80px";   // adjust if needed
-    searchContainer.style.left = "20px";  // aligns like the image
-    searchContainer.style.width = "250px";
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.createElement("div");
+  container.style.position = "fixed";
+  container.style.top = "80px";
+  container.style.left = "20px";
+  container.style.width = "250px";
+  container.style.zIndex = "9999";
+  container.style.backgroundColor = "#fff";  // white background
+  container.style.padding = "8px";
+  container.style.borderRadius = "8px";
+  container.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
+  
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Search by level name...";
+  input.style.width = "100%";
+  input.style.padding = "10px";
+  input.style.borderRadius = "8px";
+  input.style.border = "1px solid #ccc";
+  input.style.fontSize = "14px";
 
-    // Create input
-    const searchInput = document.createElement("input");
-    searchInput.type = "text";
-    searchInput.placeholder = "Search by level name...";
-    
-    // Styling to match the screenshot
-    searchInput.style.width = "100%";
-    searchInput.style.padding = "10px";
-    searchInput.style.borderRadius = "8px";
-    searchInput.style.border = "1px solid #ccc";
-    searchInput.style.fontSize = "14px";
-    searchInput.style.outline = "none";
-
-    // Append input to container
-    searchContainer.appendChild(searchInput);
-
-    // Append to page
-    document.body.appendChild(searchContainer);
-
-    // Optional: basic filtering logic
-    searchInput.addEventListener("input", function () {
-        const filter = searchInput.value.toLowerCase();
-        const items = document.querySelectorAll("li, .list-item");
-
-        items.forEach(item => {
-            const text = item.textContent.toLowerCase();
-            item.style.display = text.includes(filter) ? "" : "none";
-        });
-    });
+  container.appendChild(input);
+  document.body.appendChild(container);
 });
